@@ -1,0 +1,23 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/categorias">Categorias</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{categoria.slug}}</li>
+  </ol>
+</nav>
+<hr>
+<h1>{{categoria.nome}}</h1>
+<hr>
+
+{{#each postagens}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3>{{titulo}}</h3>
+            <p>{{descricao}}</p>
+            <a href="/postagem/0/{{slug}}" class="btn btn-success">Leia mais</a>
+            <hr>
+            <small>Data: {{data}}</small>
+        </div>
+    </div>
+{{else}}
+    <h5>Nenhuma postagem</h5>
+{{/each}}

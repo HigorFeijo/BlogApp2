@@ -1,0 +1,26 @@
+<h3>Postagens: </h3>
+<hr>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/admin">Administração</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Postagens</li>
+  </ol>
+</nav>
+<hr>
+<a href="/admin/postagens/add"><button class="btn btn-primary">Nova postagem</button></a>
+<hr>
+<h4>Lista de postagens: </h4>
+{{#each postagens}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{titulo}}</h4>
+            <p>Descrição: {{descricao}}</p>
+            <small>Categoria: {{categoria.nome}}</small><br>
+            <small>Data: {{data}}</small><br>
+            <a href="/admin/postagens/edit/{{_id}}" class="btn btn-success mt-2">Editar</a>
+            <a href="/admin/postagens/deletar/{{_id}}" class="btn btn-danger mt-2" type="submit">Deletar</a>
+        </div>
+    </div>
+{{else}}
+    <br><h5>Nenhuma postagem registrada</h5>
+{{/each}}

@@ -1,0 +1,27 @@
+{{#if pag}}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Postagens</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{postagem.slug}}</li>
+    </ol>
+  </nav>
+{{else}}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/categorias/{{postagem.categoria.slug}}">Postagens</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{postagem.slug}}</li>
+    </ol>
+  </nav>
+{{/if}}
+
+<hr>
+<div class="card">
+    <div class="card-body">
+        <h1>{{postagem.titulo}}</h1>
+        <hr>
+        <small>Categoria: {{postagem.categoria.nome}}</small><br>
+        <small>Data de publicação: {{postagem.data}}</small>
+        <br><br>
+        <p>{{postagem.conteudo}}</p>
+    </div>
+</div>

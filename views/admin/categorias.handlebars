@@ -1,0 +1,25 @@
+<h3>Categorias: </h3>
+<hr>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/admin">Administração</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Categorias</li>
+  </ol>
+</nav>
+<hr>
+<a href="/admin/categorias/add"><button class="btn btn-primary">Nova categoria</button></a>
+<hr>
+<h4>Lista de categorias: </h4>
+{{#each categorias}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{nome}}</h4>
+            <small>Slug: {{slug}}</small><br>
+            <small>Data: {{data}}</small><br>
+            <a href="/admin/categorias/edit/{{_id}}" class="btn btn-success mt-2">Editar</a>
+            <a href="/admin/categorias/deletar/{{_id}}" class="btn btn-danger mt-2" type="submit">Deletar</a>
+        </div>
+    </div>
+{{else}}
+    <br><h5>Nenhuma categoria registrada</h5>
+{{/each}}
