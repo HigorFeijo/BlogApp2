@@ -14,6 +14,11 @@ const Categoria = new Schema({
         type: Date,
         required: true,
         default: Date.now()
+    },
+    posts: {
+        type: Number,
+        required: true,
+        default: 0
     }
 })
 

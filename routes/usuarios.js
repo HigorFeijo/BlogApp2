@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 require('../models/Usuario')
 const Usuario = mongoose.model('usuarios')
 const passport = require('passport')
+const nodemailer = require('nodemailer')
 
 router.get('/registrar', (req, res) => {
     res.render('usuarios/registro')

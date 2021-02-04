@@ -35,7 +35,7 @@ app.use((req, res, next) => {
     next()
 })
 
-mongoose.connect('mongodb://localhost/blogapp2', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost/blogapp2', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
