@@ -16,6 +16,8 @@ const Categoria = mongoose.model('categorias')
 const usuarios = require('./routes/usuarios')
 const passport = require('passport')
 require('./config/auth')(passport)
+require('dotenv').config()
+const env = require('./.env')
 
 app.use(session({
     secret: 'blogapp2',
@@ -35,7 +37,7 @@ app.use((req, res, next) => {
     next()
 })
 
-mongoose.connect('mongodb://localhost/blogapp2', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
@@ -109,6 +111,7 @@ app.use("/admin", admin)
 app.use('/usuarios', usuarios)
 
 const PORT = process.env.PORT || 3000
+
 app.listen(PORT, () => {
-    console.log('Server ligado')
+    console.log('Server Rodando')
 })
