@@ -108,7 +108,7 @@ app.get('/categorias/:slug', (req, res) => {
 app.use("/admin", admin)
 app.use('/usuarios', usuarios)
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log('Server ligado')
 })
